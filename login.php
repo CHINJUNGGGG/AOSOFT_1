@@ -1,4 +1,6 @@
-<?php require_once __DIR__.'/connect.php'; ?>
+<?php
+session_start();
+require_once __DIR__.'/connect.php'; ?>
 <!doctype html>
 <html lang="en">
   <head><?php require_once __DIR__.'/head.php'; ?></head>
@@ -31,7 +33,7 @@
 
         if($row > 0){
             if($row['status'] == "admin"){
-                header("location:admin_index.php");
+                header("location:home.blade.php");
             }
             if($row['status'] == "user"){
                 header("location:index.php");

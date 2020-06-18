@@ -1,4 +1,5 @@
-<?php require_once __DIR__.'/connect.php'; ?>
+<?php session_start();
+require_once __DIR__.'/connect.php'; ?>
 <!doctype html>
 <html lang="en">
   <head><?php require_once __DIR__.'/head.php'; ?></head>
@@ -10,7 +11,7 @@
     <form action="SaveRegister.php" method="POST" encypte="multipart/form-data"> 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
+                <label for="inputEmail4"><?php echo $_SESSION['email']?></label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
